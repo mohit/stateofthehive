@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<link href='http://fonts.googleapis.com/css?family=Cabin:regular,bold' rel='stylesheet' type='text/css'>
+		
+		<title>The State of the Hive</title>
+   		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+		<style type="text/css" media="screen">
+			#status {
+				margin:auto;
+				background: #ed5e26;
+				padding: 8em 0;
+			}
+			
+			#members {
+				height: 2em;
+				margin:auto;
+			}
+			
+			h1 {
+				font-family: 'Cabin', arial, serif;
+				letter-spacing: 0.06em;
+				text-align: center;
+				text-shadow: 3px 3px 0px #983c21, 
+							 4px 4px 0px #983c21, 
+							 5px 5px 0px #983c21, 
+							 6px 6px 0px #983c21, 
+							 7px 7px 0px #983c21, 
+							 8px 8px 0px #983c21,
+							 9px 9px 0px #983c21, 
+							 10px 10px 0px #983c21,
+							 11px 11px 0px #983c21, 
+							 12px 12px 0px #983c21;
+				font-weight: 1200;
+				font-size: 6em;
+				color: #fce9d4;
+			}
+			body {
+				background: #ed5e26;
+				width: 99%;
+				font-family: 'Cabin', arial, serif;
+			}
+			ul {
+				width: 50em;
+				color: #983c21;
+			}
+			li {
+				list-style: none;
+				display: inline;
+				padding-left:1.7em;
+				font-weight: 400;
+			}
+			a:link {
+				color: #983c21;
+				text-decoration: none;
+			}
+			a:visited {
+				color: #983c21;
+			}
+			a:hover {
+				color: #fce9d4;
+			}
+		</style>
+	<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23295933-1']);
+      _gaq.push(['_setDomainName', '.stateofthehive.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+
+      function search() {
+         var search_uri = "http://search.twitter.com/search.json?q=%23stateofthehive%20(from%3Amohitgupta%20OR%20from%3Ageorgethayes%20OR%20from%3Aalsmola%20OR%20from%3Apoezn)&callback=?";
+         $.getJSON(search_uri, function(data) {
+               var status = data.results[0].text;
+               status = status.replace('#stateofthehive', '');
+               $('#status h1').text(status)
+         });
+      }
+      
+      $(document).ready(function() {
+         search();
+      });
+
+   </script>
+
+	</head>
+	<body id="index" onload="">
+		<div id="status">
+         <h1>CHILLING HARD.</h1>
+		</div>
+		<ul id="members">
+			<a href="http://www.linkedin.com/profile/view?id=22598325"><li>Ángel Rodríguez</li></a>
+			<a href="http://alexsmolen.com/"><li>Alex Smolen</li></a>
+			<a href="http://georgethayes.com/"><li>George T Hayes</li></a>
+			<a href="http://www.linkedin.com/pub/laurie-brescoll/3/79a/6b6"><li>Laurie Brescoll</li></a>
+			<a href="http://www.mohit.biz/"><li>Mohit Gupta</li></a>
+			<a href="http://www.ethangooding.com/"><li>Ethan Gooding</li></a>
+		</ul>
+	</body>
+</html>
